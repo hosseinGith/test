@@ -1,0 +1,384 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: vazir;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+header section:first-child {
+  background-color: #f7f7f7;
+}
+header section {
+  padding: 20px;
+}
+header section > div .headerDiv {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header section > div .headerDiv .mainMenu {
+  flex-basis: 35%;
+}
+header section > div .headerDiv .mainMenu > button {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: all 0.5s;
+}
+header section > div .headerDiv .mainMenu > button span {
+  display: inline-block;
+  width: 90%;
+  height: 4px;
+  background-color: #000;
+  transition: all 0.5s;
+}
+header section > div .headerDiv .mainMenu .blurBackground {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2862745098);
+  display: none;
+  animation: blurBackgroundHide 0.5s linear;
+  opacity: 0;
+}
+header section > div .headerDiv .mainMenu .blurBackground nav {
+  width: 60%;
+  background-color: #222d50;
+  height: 100%;
+  padding: 20px;
+  animation: navHide 0.5s ease-in-out;
+}
+header section > div .headerDiv .mainMenu .blurBackground nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+header section > div .headerDiv .mainMenu .blurBackground nav ul li:first-child {
+  text-align: end;
+}
+header section > div .headerDiv .mainMenu .blurBackground nav ul li {
+  width: 100%;
+  color: #fff;
+}
+header section > div .headerDiv .mainMenu .blurBackground nav ul li button {
+  padding: 3px 6px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+header section > div .headerDiv .mainMenu .blurBackground nav ul li a {
+  color: inherit;
+}
+header section > div .headerDiv .mainMenu .blurBackground nav ul li:hover {
+  color: rgba(255, 255, 255, 0.8705882353);
+}
+header section > div .headerDiv .mainMenu.active > button span {
+  position: absolute;
+  top: 45%;
+}
+header section > div .headerDiv .mainMenu.active > button span:nth-child(1) {
+  right: 2px;
+  rotate: -47deg;
+}
+header section > div .headerDiv .mainMenu.active > button span:nth-child(2) {
+  display: none;
+}
+header section > div .headerDiv .mainMenu.active > button span:nth-child(3) {
+  left: 2px;
+  rotate: 47deg;
+}
+header section > div .headerDiv .mainMenu.active .blurBackground {
+  display: block;
+  animation: blurBackgroundShow 0.5s linear;
+  opacity: 1;
+}
+header section > div .headerDiv .mainMenu.active .blurBackground nav {
+  animation: navShow 0.5s ease-in-out;
+}
+@keyframes blurBackgroundHide {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes navShow {
+  0% {
+    display: none;
+    transform: translate(100%);
+  }
+  100% {
+    display: block;
+    transform: translate(0);
+  }
+}
+@keyframes navHide {
+  0% {
+    transform: translate(0);
+    display: block;
+  }
+  100% {
+    transform: translate(100%);
+    display: none;
+  }
+}
+header section > div .headerDiv .logoAndLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header section > div .headerDiv .logoAndLinks nav {
+  display: none;
+}
+header section > div .headerDiv .logoAndLinks nav ul {
+  display: flex;
+  align-content: center;
+  gap: 5px;
+}
+header section > div .headerDiv .logoAndLinks nav ul li a {
+  padding: 5px 10px;
+  color: rgba(0, 0, 0, 0.7411764706);
+}
+header section > div .headerDiv .logoAndLinks nav ul li a:hover {
+  color: #000;
+}
+header section > div .headerDiv .leftElements {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 30px;
+  flex-basis: 35%;
+}
+header section > div .headerDiv .leftElements .searchBarCont {
+  display: none;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 0px 5px #b9b9b9;
+  border-radius: 5px;
+}
+header section > div .headerDiv .leftElements .searchBarCont input {
+  background-color: transparent;
+  width: 90%;
+  padding: 5px 10px;
+  border: 0;
+  font-size: 12px;
+}
+header section > div .headerDiv .leftElements .searchBarCont label {
+  color: #636363;
+  font-size: 20px;
+}
+header section > div .headerDiv .leftElements > div > a {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #222d50;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+main section > div .content {
+  text-align: center;
+  margin: 10px 0;
+}
+main section > div .content > nav {
+  margin: 50px 0;
+}
+main section > div .content > nav > ul {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+main section > div .content > nav > ul > li {
+  width: 400px;
+  height: 400px;
+  max-width: 400px;
+  max-height: 400px;
+  transition: all 0.5s;
+}
+main section > div .content > nav > ul > li .member {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+main section > div .content > nav > ul > li .member .memberInfo {
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  transform: translate(10%, -45%);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  top: 50%;
+  right: 0;
+  transition: all 0.3s;
+}
+main section > div .content > nav > ul > li .member .memberInfo .soshalMedia {
+  position: absolute;
+  right: -30px;
+  display: flex;
+  flex-direction: column;
+}
+main section > div .content > nav > ul > li .member .memberInfo .soshalMedia > a {
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+  margin: 20px;
+  transition: all 1s;
+  color: #808080;
+}
+main section > div .content > nav > ul > li .member .memberInfo .memberName {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+}
+main section > div .content > nav > ul > li .member .memberInfo::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  left: 20%;
+  transition: 0.3s all linear;
+  background: linear-gradient(#e7aa03, #2e0318);
+  border-radius: 20px;
+}
+main section > div .content > nav > ul > li .member > img {
+  width: 350px;
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  right: 0;
+  object-fit: contain;
+  z-index: 2;
+}
+main section > div .content > nav > ul > li .member .memberProf {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  height: 240px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3411764706);
+  border-radius: 20px;
+  padding: 10px;
+  z-index: 3;
+  transition: all 0.1s;
+}
+main section > div .content > nav > ul > li .member .memberProf .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main section > div .content > nav > ul > li .member .memberProf .header .profName {
+  font-size: 20px;
+}
+main section > div .content > nav > ul > li .member .memberProf .header .profImage {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+}
+main section > div .content > nav > ul > li .member .memberProf .header .profImage > img {
+  width: 100%;
+  border-radius: 50%;
+}
+main section > div .content > nav > ul > li .member .memberProf .main {
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+main section > div .content > nav > ul > li .member .memberProf .main .contactToMember {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+main section > div .content > nav > ul > li .member .memberProf .main .contactToMember > a {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+main section > div .content > nav > ul > li .member .memberProf .main .contactToMember > a > i {
+  font-size: 25px;
+  color: #3098fa;
+  margin: 0 5px;
+}
+main section > div .content > nav > ul > li .member .memberProf .main .contactToMember > a > span {
+  flex-basis: 50%;
+  text-align: center;
+}
+main section > div .content > nav > ul > li .member .memberProf.active {
+  display: flex;
+}
+main section > div .content > nav > ul > li:hover .member .memberInfo {
+  color: #fff;
+}
+main section > div .content > nav > ul > li:hover .member .memberInfo .soshalMedia a {
+  color: #fff;
+}
+main section > div .content > nav > ul > li:hover .member .memberInfo::before {
+  width: 85%;
+}
+
+@media screen and (min-width: 1005px) {
+  header section > div .headerDiv .mainMenu {
+    display: none;
+  }
+  header section > div .headerDiv .logoAndLinks > nav {
+    display: flex;
+  }
+  header section > div .headerDiv .leftElements .searchBarCont {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
