@@ -58,6 +58,7 @@ header {
             }
           }
           .blurBackground {
+            z-index: 4;
             position: fixed;
             top: 0;
             right: 0;
@@ -222,8 +223,6 @@ header {
               cursor: pointer;
             }
           }
-          .product {
-          }
         }
       }
     }
@@ -241,6 +240,7 @@ main {
           > ul {
             display: flex;
             align-items: center;
+            flex-direction: column;
             gap: 100px;
             > li {
               width: 400px;
@@ -415,6 +415,19 @@ footer {
           .leftElements {
             .searchBarCont {
               display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+  main {
+    > section {
+      > div {
+        .content {
+          > nav {
+            > ul {
+              flex-direction: row;
             }
           }
         }
