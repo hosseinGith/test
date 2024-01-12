@@ -311,7 +311,6 @@ main section > div .content > nav > ul > li .member .memberProf {
   opacity: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3411764706);
   border-radius: 20px;
@@ -322,6 +321,7 @@ main section > div .content > nav > ul > li .member .memberProf {
 main section > div .content > nav > ul > li .member .memberProf .header {
   width: 100%;
   display: flex;
+  justify-self: start;
   justify-content: space-between;
   align-items: center;
 }
@@ -342,9 +342,12 @@ main section > div .content > nav > ul > li .member .memberProf .header .profIma
 main section > div .content > nav > ul > li .member .memberProf .main {
   direction: ltr;
   display: flex;
-  flex-direction: column;
+  position: absolute;
   justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  top: 55%;
+  gap: 30px;
+  transform: translate(0, -50%);
 }
 main section > div .content > nav > ul > li .member .memberProf .main .contactToMember {
   width: 100%;
